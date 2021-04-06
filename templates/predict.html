@@ -1,0 +1,100 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina de prediccion</title>
+</head>
+<style>
+    body{
+        background-image: url(" {% static 'preDiabetes/images/fondo2.jpg' %}");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .main{
+        position: fixed;
+        top:140px;
+        left: 410;
+        width: 550px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        align-items: center;
+        padding: 5%;
+    }
+    h1{
+        color:#0086b3;
+        font-size: 30px;
+        font-weight: bold;
+    }
+    input[type=submit]{
+        background-color : #4dc3ff ;
+        border:2px;
+        color:white ;
+        padding : 8px 16px ;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+    a{
+        background-color : #4dc3ff ;
+        border:2px;
+        color:white ;
+        padding : 7.1px 15px ;
+        cursor: pointer;
+        margin-top: 15px; 
+        text-decoration: none;
+    }
+</style>
+<body>
+    <div align='center' class="main">
+        <h1>Por favor ingrese la siguiente informacion:</h1>
+        <form action="result">
+            <table>
+                <tr>
+                    <td align= "right">Numero de embarazos : </td>
+                    <td align="left"> <input type="text" name="n1"></td>
+                </tr>
+                <tr>
+                    <td align= "right">Glucosa : </td>
+                    <td align="left"> <input type="text" name="n2"></td>
+                </tr>
+                <tr>
+                    <td align= "right">Presión Sanguínea : </td>
+                    <td align="left"> <input type="text" name="n3"></td>
+                </tr>
+                <tr>
+                    <!-- Skin Thickness Espesor de la piel-->
+                    <td align= "right">Espesor del pliegue cutáneo del tríceps (mm) : </td>
+                    <td align="left"> <input type="text" name="n4"></td>
+                </tr>
+                <tr>
+                    <td align= "right">Insulina : </td>
+                    <td align="left"> <input type="text" name="n5"></td>
+                </tr>
+                <tr>
+                    <td align= "right">Indice de masa corporal (peso en kg , altura en m)  : </td>
+                    <td align="left"> <input type="text" name="n6"></td>
+                </tr>
+                <tr>
+                    <!-- Diabetes Pedigree funcion -->
+                    <td align= "right"> Probabilidad de diabetes según los antecedentes familiares :</td>
+                    <td align="left"> <input type="text" name="n7"></td>
+                </tr>
+                <tr>
+                    <td align= "right">Edad :</td>
+                    <td align="left"> <input type="text" name="n8"></td>
+                </tr>
+                
+            </table>
+            <input type="submit">
+            <a href="http://127.0.0.1:8000/">cerrar</a>
+        </form>
+        <h1>Resultado : {{ result2 }}</h1>
+
+    </div>
+    
+</body>
+</html>
+
